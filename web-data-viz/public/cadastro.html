@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Cadastro - Life in Scenes</title>
+
+  <script src="./js/sessao.js"></script>
+
+  <link rel="stylesheet" href="css/cadastro.css">
+  <link rel="icon" href="./assets/icon/icon.png" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+  <div class="login">
+
+    <div class="alerta_erro">
+      <div class="card_erro" id="cardErro">
+        <span id="mensagem_erro"></span>
+      </div>
+    </div>
+
+    <div class="voltar">
+        <a href="index.html"><i class="material-icons">arrow_back</i></a>
+    </div>
+    <div class="caixa_cadastro">
+        <div class="imagem">
+        </div>
+        <div class="formulario">
+            <div class="header">
+                <h1>CADASTRE-SE</h1>
+                <img src="assets/img/logoCadastro.png" alt="">
+            </div>
+            <div class="campos">
+                <label for="input_nome_completo">NOME COMPLETO</label>
+                <input id="input_nome_completo" type="text">
+                <div class="colunas">
+                    <div class="coluna1">
+                        <label for="input_nickname">NICKNAME</label>
+                        <input id="input_nickname" type="text">
+                        <label for="input_cpf">CPF</label>
+                        <input id="input_cpf" type="text">
+                        <label for="input_senha">SENHA</label>
+                        <input id="input_senha" type="password">
+                    </div>
+                   <div class="coluna2"> 
+                        <label for="input_email">EMAIL</label>
+                        <input id="input_email" type="text">
+                        <label for="input_data_nascimento">DATA DE NASCIMENTO</label>
+                        <input id="input_data_nascimento" type="text">
+                        <label for="input_confirmar_senha">CONFIRMAR SENHA</label>
+                        <input id="input_confirmar_senha" type="password">
+                   </div>
+                </div>
+            </div>
+            <button class="cadastrar" onclick="cadastrar()">Cadastrar</button>
+            <div class="texto_cadastro">
+                <p>JÁ POSSUI UMA CONTA? ACESSE</p>
+                <a href="login.html">CLICANDO AQUI</a>
+                <div id="div_aguardar" class="loading-div">
+                  <img src="./assets/aguarde-orange.gif" id="loading-gif" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script>
+  function cadastrar() {
+    aguardar();
+
+    var nomeVar = input_nome_completo.value;
+    var emailVar = input_email.value;
+    var senhaVar = input_senha.value;
+    var confirmacaoSenhaVar = input_confirmar_senha.value;
+    var nicknameVar = input_nickname.value;
+    var cpfVar = input_cpf.value;
+    var dataNascimentoVar = input_data_nascimento.value;
+
+    if (nomeVar == "" || emailVar == "" || senhaVar == "" || nicknameVar == "" || confirmacaoSenhaVar == "" || dataNascimentoVar == "" || cpfVar == "") {
+        mostrarErro("Preencha todos os campos para continuar!");
+        return false;
+    }
+
+    if (nomeVar.length <= 1 || !nomeVar.includes(" ")) {
+        mostrarErro("Por favor, forneça seu nome completo!");
+        return false;
+    } else if (nicknameVar.length <= 1) {
+        mostrarErro("Nickname de usuário inválido!");
+        return false;
+    } else if (emailVar.indexOf('@') == -1 || emailVar.indexOf('.com') == -1) {
+        mostrarErro("Email inválido!");
+        return false;
+    } else if (cpfVar.length != 11) {
+        mostrarErro("Cpf inválido!");
+        return false;
+    } else if (senhaVar.length <= 7) {
+        mostrarErro("Senha muito curta!");
+        return false;
+    } else if (senhaVar != confirmacaoSenhaVar) {
+        mostrarErro("Confirmação de senha incorreta!");
+        return false;
+    }
+
+    var dataNascimentoFormatada = formatarDataNascimento(dataNascimentoVar);
+
+    fetch("/usuarios/cadastrar", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            nomeServer: nomeVar,
+            emailServer: emailVar,
+            senhaServer: senhaVar,
+            cpfServer: cpfVar,
+            nicknameServer: nicknameVar,
+            dataNascimentoServer: dataNascimentoFormatada
+        }),
+    })
+    .then(function (resposta) {
+        if (resposta.ok) {
+            mostrarSucesso("Cadastro realizado com sucesso! Redirecionando para tela de Login...");
+            setTimeout(() => {
+                window.location = "login.html";
+            }, 2000);
+        } else if (resposta.status == 409) {
+            return resposta.text().then(texto => { throw new Error(texto); });
+        } else {
+            throw new Error("Houve um erro ao tentar realizar o cadastro!");
+        }
+    })
+    .catch(function (erro) {
+        mostrarErro(erro.message);
+    })
+    .finally(finalizarAguardar);
+
+    return false;
+}
+
+function mostrarErro(mensagem) {
+    cardErro.style.display = "block";
+    mensagem_erro.innerHTML = mensagem;
+    setTimeout(sumirMensagem, 5000);
+}
+
+function mostrarSucesso(mensagem) {
+    cardErro.style.display = "block";
+    mensagem_erro.innerHTML = mensagem;
+    setTimeout(sumirMensagem, 5000);
+}
+
+function sumirMensagem() {
+    cardErro.style.display = "none";
+}
+
+function aguardar() {
+    document.getElementById("div_aguardar").style.display = "block";
+}
+
+function finalizarAguardar() {
+    document.getElementById("div_aguardar").style.display = "none";
+}
+
+function formatarDataNascimento(data) {
+    var partes = data.split("/");
+    var dataFormatada = `${partes[2]}-${partes[1]}-${partes[0]}`;
+    return dataFormatada;
+}
+
+</script>

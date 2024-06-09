@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login - Life in Scenes</title>
+
+    <script src="./js/sessao.js"></script>
+
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="icon" href="./assets/icon/icon.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+
+    <div class="login">
+        <div class="alerta_erro">
+            <div class="card_erro" id="cardErro">
+                <span id="mensagem_erro"></span>
+            </div>
+        </div>
+
+        <div class="voltar">
+            <a href="index.html"><i class="material-icons">arrow_back</i></a>
+        </div>
+        <div class="caixa_login">
+            <div class="formulario">
+                <div class="header">
+                    <h1>LOGIN</h1>
+                    <img src="assets/img/logoCadastro.png" alt="">
+                </div>
+                <p>NICKNAME/</p>
+                <p>EMAIL</p>
+                <input id="input_nickname_email" type="text">
+                <p>SENHA</p>
+                <input id="input_senha" type="password">
+                <button class="entrar" onclick="entrar()">ENTRAR</button>
+                <div class="texto_login">
+                    <p>NÃO POSSUI UMA CONTA?</p>
+                    <p><a href="cadastro.html">CLIQUE AQUI</a> E CADASTRE-SE!</p>
+                </div>
+                <div id="div_aguardar" class="loading-div">
+                    <img src="./assets/aguarde-orange.gif" id="loading-gif">
+                </div>
+                <div id="div_erros_login"></div>
+            </div>
+        </div>
+
+</body>
+
+</html>
+
+<script>
+
+
+    function entrar() {
+        aguardar();
+
+        var emailOuNicknameVar = input_nickname_email.value;
+        var senhaVar = input_senha.value;
+
+        if (emailOuNicknameVar == "" || senhaVar == "") 
+        {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "Preencha os campos para acessar!";
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        console.log("FORM LOGIN: ", emailOuNicknameVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", 
+        {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailOuNicknameServer: emailOuNicknameVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NICKNAME_USUARIO = json.nickname;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.idUsuario;
+
+                    setTimeout(function () 
+                    {
+                        window.location = "./corpoSistema/indexLogado.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>
