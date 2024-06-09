@@ -1,0 +1,79 @@
+body 
+{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../midia/fundoJurassic.jpeg'); 
+    background-size: cover; 
+    color: #FFF;
+    font-family:"Edu VIC WA NT Beginner", cursive;
+}
+
+.login-container 
+{
+    text-align: center;
+    border: 1px solid #000;
+    border-radius: 10%;
+    padding: 5%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.login-container h2 
+{
+    margin-bottom: 12%;
+}
+
+.input-group 
+{
+    margin-bottom: 5%;
+}
+
+.input-group input 
+{
+    width: 90%;
+    padding: 6%;
+    font-size: 3vh;
+    border: 1px solid #ccc;
+    border-radius: 5%;
+    font-style: italic;
+    font-family:"Edu VIC WA NT Beginner", cursive;
+}
+
+.input-group button 
+{
+    width: 80%;
+    padding: 5%;
+    background-color: #800020;
+    color: #fff;
+    border: none;
+    border-radius: 5%;
+    cursor: pointer;
+    font-size: 3vh;
+    margin-top: 10%;
+}
+
+.input-group button:hover 
+{
+    background-color: #5a0013;
+}
+
+.voltar 
+{
+    position: fixed;
+    top: 10%; 
+    right: 65%; 
+}
+
+.voltar a 
+{
+    text-decoration: none;
+    color: #000; 
+}
+
+.material-icons
+{
+    font-size: 5vh !important;
+}
