@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criadora - Life in Scenes</title>
+
+    <link rel="icon" href="../assets/icon/icon.png" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+    <link rel="stylesheet" href="css/styleCriadora.css">
+    <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nova+Slim&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script src="../js/sessao.js"></script>
+
+</head>
+<body onload="validarSessao()">
+    <div class="header">
+        <ul class="itens">
+            <li><img src="midia/logo.png" alt="LOGO"></li>
+            <div class="dadosLogin">
+                <p class="nome_usuario">@<span id="b_usuario">usuário</span></p>
+                <img class="foto_perfil" src="midia/fotoPerFil.jpeg" alt="Foto de perfil">
+            </div>
+        </ul>
+    </div>
+    <div class="pagina">
+        <input type="checkbox" id="menu_toggle">
+        <label for="menu_toggle" id="simbolo_menu">
+            <span class="material-symbols-outlined">menu</span>
+        </label>
+        <div class="menu_lateral">
+            <ul class="topicos" id="menu_opcoes">
+                <li><a href="indexLogado.html"><span class="material-symbols-outlined">home</span><span class="texto">Inicio</span></a></li>
+                <li><a href="emAlta.html"><span class="material-symbols-outlined">trending_up</span><span class="texto">Em alta</span></a></li>
+                <li><a href="lancamento.html"><span class="material-symbols-outlined">star</span><span class="texto">Lançamentos</span></a></li>
+                <li><a href="dublagem.html"><span class="material-symbols-outlined">mic</span><span class="texto">Dublagens</span></a></li>
+                <li><a href="criadora.html"><span class="material-symbols-outlined">draw</span><span class="texto">Criadora</span></a></li>
+                <li><a href="quiz.html"><span class="material-symbols-outlined">format_list_bulleted</span>Quiz</span></a></li>
+                <br>
+                <li onclick="limparSessao()" class="sair"><span class="material-symbols-outlined">logout</span>Sair</li>
+            </ul>
+        </div>
+        <div class="conteudo">
+            <div class="top_semana">
+                <h1><center>PRODUÇÕES DO MEU CORAÇÃO</center></h1>
+                <a href="https://www.google.com/search?q=jurassic+park&rlz=1C1FCXM_pt-PTBR1070BR1071&gs_lcrp=EgZjaHJvbWUqDwgAECMYJxjjAhiABBiKBTIPCAAQIxgnGOMCGIAEGIoFMgwIARAuGCcYgAQYigUyBggCEEUYOTIHCAMQABiABDIKCAQQABixAxiABDIKCAUQABixAxiABDIHCAYQABiABDIKCAcQABixAxiABDIKCAgQABixAxiABDINCAkQLhiDARixAxiABNIBCDExMTVqMGo5qAIAsAIB&sourceid=chrome&ie=UTF-8&si=ACC90nxUzOfvFoU4exd4biKnHm2F8ZViMMcbLkES6jDCOnechCGViU4qOUABkbESFzZazGBfIAWaa8wIbzedkW2XfT7BNR9TvMzMD8n7cpOhrs6hRiRovtw%3D&ictx=1&ved=2ahUKEwi3l_Pehb6GAxXoqZUCHXITA9AQ_coHegQIWxAe"><img src="midia/jurassicPark.jpg" alt="jurassic Park"></a>
+                <a href="https://www.google.com/search?q=full+house&rlz=1C1FCXM_pt-PTBR1070BR1071&gs_lcrp=EgZjaHJvbWUqDQgAEAAY4wIYsQMYgAQyDQgAEAAY4wIYsQMYgAQyDQgBEC4Y1AIYsQMYgAQyDQgCEC4Y1AIYsQMYgAQyEAgDEC4YrwEYxwEYsQMYgAQyCggEEC4YsQMYgAQyBwgFEC4YgAQyCggGEAAYsQMYgAQyBwgHEAAYgAQyBwgIEC4YgAQyBwgJEAAYgATSAQg4NTYxajBqOagCCLACAQ&sourceid=chrome&ie=UTF-8&si=ACC90nxP_U0D0YLRSjOsz6Or0jkuMP0tTRc3yHAJiVL68_GwGZST5gKH6bwdITRWDCb_0LZoa0ASO16TYpfZq36jVUmyPilE_8MoEDhc08YCxS6NGDdJy2w%3D&ictx=1&ved=2ahUKEwig--38hb6GAxX_ppUCHddpBKAQ_coHegQIXxAe"><img src="midia/fullHouse.jpg" alt="Full House"></a>
+                <a href="https://www.google.com/search?q=arquivo+x&rlz=1C1FCXM_pt-PTBR1070BR1071&oq=arquivo+x&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTINCAEQLhiDARixAxiABDIHCAIQABiABDIQCAMQLhivARjHARixAxiABDIHCAQQABiABDIKCAUQABixAxiABDIHCAYQABiABDIHCAcQABiABDIHCAgQABiABDIHCAkQABiABNIBCDE1MjdqMGo5qAIAsAIA&sourceid=chrome&ie=UTF-8"><img src="midia/arquivoX.jpeg" alt=""></a>
+                <a href="https://www.google.com/search?q=harry+potter&rlz=1C1FCXM_pt-PTBR1070BR1071&oq=harry+potter&gs_lcrp=EgZjaHJvbWUqDAgAECMYJxiABBiKBTIMCAAQIxgnGIAEGIoFMhAIARAuGIMBGNQCGLEDGIAEMgYIAhBFGEAyBggDECMYJzIQCAQQLhiDARjUAhixAxiABDINCAUQLhiDARixAxiABDIGCAYQRRg8MgYIBxBFGD3SAQgyODM0ajBqOagCALACAA&sourceid=chrome&ie=UTF-8"><img src="midia/harryPotter.jpg" alt="Harry Potter"></a>
+                <a href="https://www.google.com/search?q=B99&rlz=1C1FCXM_pt-PTBR1070BR1071&oq=B99&gs_lcrp=EgZjaHJvbWUyEggAEEUYORiDARjjAhixAxiABDINCAEQLhiDARixAxiABDIHCAIQABiABDIHCAMQABiABDIHCAQQABiABDIHCAUQABiABDIHCAYQABiABDIHCAcQABiABDIHCAgQABiABDIHCAkQABiABNIBCDExMzNqMGo5qAIIsAIB&sourceid=chrome&ie=UTF-8"><img src="midia/b99.jpg" alt="B33"></a>
+            </div>
+            <h1>DUBLADORES DO CORAÇÃO</h1>
+            <div class="dubladores">
+                <a href="https://www.google.com/search?q=wendel+bezerra&rlz=1C1FCXM_pt-PTBR1070BR1071&oq=wendel+bezerra&gs_lcrp=EgZjaHJvbWUqDwgAECMYJxjjAhiABBiKBTIPCAAQIxgnGOMCGIAEGIoFMgwIARAuGCcYgAQYigUyBggCEEUYOzIGCAMQRRhAMgcIBBAAGIAEMgcIBRAAGIAEMgcIBhAAGIAEMgcIBxAAGIAE0gEIMjA2NmowajmoAgCwAgE&sourceid=chrome&ie=UTF-8"><img src="midia/wendelBezerra.jpg" alt="Wendel Bezerra"></a>
+                <a href="https://www.google.com/search?q=Bianca+Alencar&rlz=1C1FCXM_pt-PTBR1070BR1071&oq=bian&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MgoIARAuGLEDGIAEMgYIAhBFGDkyCggDEAAYsQMYgAQyCggEEC4YsQMYgAQyBggFEEUYPDIGCAYQRRg8MgYIBxBFGDzSAQgxODg2ajBqOagCALACAA&sourceid=chrome&ie=UTF-8"><img src="midia/biancaAlencar.jpeg" alt="Bianca Alencar"></a>
+                <a href="https://www.google.com/search?q=Guilherme+briggs&rlz=1C1FCXM_pt-PTBR1070BR1071&oq=guilherme+&gs_lcrp=EgZjaHJvbWUqDwgAEEUYOxjjAhixAxiABDIPCAAQRRg7GOMCGLEDGIAEMgYIARBFGDkyCggCEC4YsQMYgAQyDQgDEC4YgwEYsQMYgAQyDQgEEC4YgwEYsQMYgAQyBwgFEAAYgAQyCggGEC4YsQMYgAQyBggHEEUYPNIBCDE0MzVqMGo5qAIAsAIA&sourceid=chrome&ie=UTF-8"><img src="midia/guilhermeBriggs.jpeg" alt="guilherme Briggs"></a>
+                <a href="https://www.google.com/search?q=Mabel+Cezar&rlz=1C1FCXM_pt-PTBR1070BR1071&oq=mabel+ce&gs_lcrp=EgZjaHJvbWUqEggAEEUYOxiDARjjAhixAxiABDISCAAQRRg7GIMBGOMCGLEDGIAEMg0IARAuGIMBGLEDGIAEMgYIAhBFGDkyBwgDEAAYgAQyBwgEEAAYgAQyBwgFEC4YgAQyBwgGEAAYgAQyDQgHEC4YrwEYxwEYgAQyDQgIEC4YrwEYxwEYgAQyBwgJEC4YgATSAQgxNTI1ajBqOagCALACAA&sourceid=chrome&ie=UTF-8"><img src="midia/mabelCezar.jpeg" alt="Mabel Cezar"></a>
+                <a href="https://www.google.com/search?q=alexandre+moreno&rlz=1C1FCXM_pt-PTBR1070BR1071&oq=alexandre+moreno&gs_lcrp=EgZjaHJvbWUqEAgAEAAYgwEY4wIYsQMYgAQyEAgAEAAYgwEY4wIYsQMYgAQyDQgBEC4YgwEYsQMYgAQyBwgCEAAYgAQyCggDEC4Y1AIYgAQyBwgEEAAYgAQyBwgFEAAYgAQyBwgGEAAYgAQyBwgHEAAYgAQyBwgIEAAYgAQyBwgJEAAYgATSAQgyNDg5ajBqOagCALACAA&sourceid=chrome&ie=UTF-8"><img src="midia/alexandreMoreno.jpeg" alt="Alexandre Moreno"></a>
+            </div>
+            <a class="scroll-down" href="#blocos">
+                <span class="material-icons">expand_more</span>
+            </a>
+            <div class="blocos" id="blocos">
+                <div class="bloco1">
+                    <img src="midia/ftAna.jpeg" alt="Ana">
+                    <p>Olá a todos no LifeinScenes! Será um prazer abrir meu mundo para vocês.<br>
+                        Sou Ana Claudia Ferreira, tenho 18 anos, e minha vida é permeada pela arte de diversas formas. Uma delas a cinematografia, onde descubro o poder e o impacto que as produções têm sobre a sociedade. Dizem que a arte imita a vida, mas eu acredito firmemente que, cada vez mais, é a vida que imita a arte.
+                        Desde que me lembro, a produção cinematográfica sempre esteve presente 
+                        em minha vida, e sou um exemplo claro de alguém que evoluiu e foi influenciado 
+                        por ela. A partir dos meus cinco anos, lembro-me vividamente da paixão que se 
+                        instalou em meu coração.<br> Os programas "Bom Dia & Cia" do SBT e, especialmente, 
+                        o "Quintal da Cultura" da TV Cultura, tornaram-se meus melhores amigos e, por vezes, 
+                        minha única companhia. Recordo-me das manhãs em que eu fazia questão de acordar às 
+                        oito da manhã para assistir um programa chamado "Lucas Silva e Silva", produzido aqui 
+                        mesmo no Brasil.
+                    </p>
+                </div>
+                <div class="bloco2">
+                    <p>
+                        Aos sete anos, descobri o fascinante universo da dublagem ao 
+                        reconhecer a voz da dubladora Bianca Alencar na TV, e mais tarde, 
+                        ao ver uma reportagem sobre dublagem, com destaque para o Pica-Pau. 
+                        Mais tarde, aos onze anos, identifiquei a voz de Wendel Bezerra no aplicativo 
+                        de estudos Khan Academy, voltado para a matemática. Desde então, passei a acompanhar 
+                        vários dubladores, e as produções cinematográficas se tornaram cada vez mais presentes
+                        em minha vida.<br>
+                        Desenvolvi um interesse profundo em conhecer a 
+                        história, as etapas de produção e tudo o que envolve o 
+                        tema. Já assisti a tantos filmes que nem consigo contar mais, 
+                        provenientes de diversas origens. Um exemplo é a filmografia de 
+                        Jackie Chan, cuja produção e talento admiro tanto que já assisti a 
+                        mais de trinta de seus filmes, alguns totalmente em mandarim, sem legendas, 
+                        gravados na China!
+                    </p>
+                    <img src="midia/cinema.jpeg" alt="Cinema Avatar">
+                </div>
+                <div class="bloco3">
+                    <img src="midia/familia.jpeg" alt="Familia Cinema">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="rodape">
+        <div class="info">
+            <p>&copy; 2024 Life in Scenes. Todos os direitos reservados.</p>
+            <p>Feito com ❤️ por Ana Claudia Ferreira</p>
+        </div>
+        <div class="contatos">
+            <p>Contatos:</p>
+            <ul>
+                <li>Email: campaner@gmail.com</li>
+                <li>Telefone: (11) 97518-264555</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

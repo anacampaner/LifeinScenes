@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Life in Scenes</title>
+
+    <link rel="icon" href="./assets/icon/Icon.png"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+    <link rel="stylesheet" href="css/quiz.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nova+Slim&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <script src="../js/sessao.js"></script>
+</head>
+<body onload="validarSessao()">
+    <div class="header">
+        <ul class="itens">
+            <li><img src="midia/logo.png" alt="LOGO"></li>
+            <div class="dadosLogin">
+                <p class="nome_usuario">@<span id="b_usuario">usuário</span></p>
+                <img class="foto_perfil" src="midia/fotoPerFil.jpeg" alt="Foto de perfil">
+            </div>
+        </ul>
+    </div>
+        <div class="conteudo">
+
+            <div class="voltar">
+                <a href="indexLogado.html"><i class="material-icons">arrow_back</i></a>
+            </div>
+
+            <div class="alerta_erro">
+                <div class="card_erro" id="cardErro">
+                  <span id="mensagem_erro"></span>
+                </div>
+              </div>
+            <div class="formulario">
+                <div class="inicio">
+                    <h1>QUIZ - LIFE IN SCENES</h1>
+                    <p>Olá! Esta parte do site é destinada para guardar um pouco sobre seus gostos e preferências, para análise e melhorias futuras na plataforma.</p>
+                </div>
+                <div class="questoes">
+                    <label for="qtdAssistidoMes">Em média quantas produções cinematográficas você assiste em um mês?</label>
+                    <input type="number" id="qtdAssistidoMes" name="qtdAssistidoMes">
+        
+                    <label for="influenciaFilmes">Você acredita que filmes e séries influenciam nas suas ações e pensamentos?</label>
+                    <select id="influenciaFilmes" name="influenciaFilmes">
+                        <option value="sim">Sim</option>
+                        <option value="nao">Não</option>
+                    </select>
+        
+                    <label for="producoesFavoritas">Escreva o nome de algumas de suas produções favoritas (separadas por vírgula)</label>
+                    <input type="text" id="producoesFavoritas" name="producoesFavoritas">
+        
+                    <label for="generos">Qual seu gênero favorito?</label>
+                    <input type="text" id="generos" name="generos">
+        
+                    <label for="topicos">Qual seu tipo de produção favorito?</label>
+                    <input type="text" id="topicos" name="topicos">
+
+                    <button onclick="cadastrar()">ENVIAR RESPOSTAS</button>
+                </div>
+                <div id="div_aguardar" class="loading-div">
+                    <img src="./../assets/aguarde-pink2.gif" id="loading-gif" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="rodape">
+        <div class="info">
+            <p>&copy; 2024 Life in Scenes. Todos os direitos reservados.</p>
+            <p>Feito com ❤️ por Ana Claudia Ferreira</p>
+        </div>
+        <div class="contatos">
+            <p>Contatos:</p>
+            <ul>
+                <li>Email: campaner@gmail.com</li>
+                <li>Telefone: (11) 97518-264555</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+  function cadastrar() 
+  {
+    aguardar();
+
+
+    var qtdAssistidoMesVar = qtdAssistidoMes.value;
+    var influenciaFilmesVar = influenciaFilmes.value;
+    var producoesFavoritasVar = producoesFavoritas.value;
+    var generosVar = generos.value;
+    var topicosVar = topicos.value;
+
+
+    if 
+    (
+        qtdAssistidoMesVar == "" ||
+        influenciaFilmesVar == "" ||
+        producoesFavoritasVar == "" ||
+        generosVar == "" ||
+        topicosVar == ""
+    ) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "Preencha todos os campos!";
+
+      finalizarAguardar();
+      return false;
+    } else {
+      setInterval(sumirMensagem, 5000);
+    }
+
+
+    if (producoesFavoritasVar.length <= 1 )
+    {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML ="Entrada inválida!";
+      finalizarAguardar();
+      return false;
+    } 
+    else if (generosVar.length <= 1 )
+    {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML ="Entrada inválida!";
+      finalizarAguardar();
+      return false;
+    } 
+    else if (topicosVar.length <= 1 )
+    {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML ="Entrada inválida!";
+      finalizarAguardar();
+      return false;
+    } 
+    else
+    {
+      setInterval(sumirMensagem, 5000);
+    }
+
+
+    
+    fetch("/usuarios/cadastrarQuiz", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+        qtdAssistidoMesServer: qtdAssistidoMesVar,
+        influenciaFilmesServer: influenciaFilmesVar,
+        producoesFavoritasServer: producoesFavoritasVar,
+        generosServer: generosVar,
+        topicosServer: topicosVar
+    }),
+    })
+    .then(function (resposta) {
+        if (resposta.ok) {
+            setTimeout(() => {
+                alert("Repostas enviadas com sucesso!");
+                window.location = "indexLogado.html";
+            }, 2000);
+        } else if (resposta.status == 409) {
+            return resposta.text().then(texto => { throw new Error(texto); });
+        } else {
+            throw new Error("Houve um erro ao tentar realizar o cadastro!");
+        }
+    })
+    .catch(function (erro) {
+        mostrarErro(erro.message);
+    })
+    .finally(finalizarAguardar);
+
+    return false;
+  }
+
+
+  function mostrarErro(mensagem) {
+    cardErro.style.display = "block";
+    mensagem_erro.innerHTML = mensagem;
+    setTimeout(sumirMensagem, 5000);
+}
+
+function mostrarSucesso(mensagem) {
+    cardErro.style.display = "block";
+    mensagem_erro.innerHTML = mensagem;
+    setTimeout(sumirMensagem, 5000);
+}
+
+function sumirMensagem() {
+    cardErro.style.display = "none";
+}
+
+function aguardar() {
+    document.getElementById("div_aguardar").style.display = "block";
+}
+
+function finalizarAguardar() {
+    document.getElementById("div_aguardar").style.display = "none";
+}
+</script>

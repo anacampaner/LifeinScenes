@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Em alta - Life in Scenes</title>
+
+    <link rel="icon" href="../assets/icon/Icon.png" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+    <link rel="stylesheet" href="css/styleEmAlta.css">
+    <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nova+Slim&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script src="../js/sessao.js"></script>
+</head>
+<body onload="validarSessao()">
+    <div class="header">
+        <ul class="itens">
+            <li><img src="midia/logo.png" alt="LOGO"></li>
+            <div class="dadosLogin">
+                <p class="nome_usuario">@<span id="b_usuario">usuário</span></p>
+                <img class="foto_perfil" src="midia/fotoPerFil.jpeg" alt="Foto de perfil">
+            </div>
+        </ul>
+    </div>
+    <div class="pagina">
+        <input type="checkbox" id="menu_toggle">
+        <label for="menu_toggle" id="simbolo_menu">
+            <span class="material-symbols-outlined">menu</span>
+        </label>
+        <div class="menu_lateral">
+            <ul class="topicos" id="menu_opcoes">
+                <li><a href="indexLogado.html"><span class="material-symbols-outlined">home</span><span class="texto">Inicio</span></a></li>
+                <li><a href="emAlta.html"><span class="material-symbols-outlined">trending_up</span><span class="texto">Em alta</span></a></li>
+                <li><a href="lancamento.html"><span class="material-symbols-outlined">star</span><span class="texto">Lançamentos</span></a></li>
+                <li><a href="dublagem.html"><span class="material-symbols-outlined">mic</span><span class="texto">Dublagens</span></a></li>
+                <li><a href="criadora.html"><span class="material-symbols-outlined">draw</span><span class="texto">Criadora</span></a></li>
+                <li><a href="quiz.html"><span class="material-symbols-outlined">format_list_bulleted</span>Quiz</span></a></li>
+                <br>
+                <li onclick="limparSessao()" class="sair"><span class="material-symbols-outlined">logout</span>Sair</li>
+            </ul>
+        </div>
+        <div class="conteudo">
+            <div class="top_semana">
+                <h1>TOP 05 DE MAIO</h1>
+                <a href="https://www.google.com/search?q=Anatomia+de+uma+Queda&rlz=1C1FCXM_pt-PTBR1070BR1071&oq=ana&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MgYIARBFGDkyDAgCEAAYQxiABBiKBTIQCAMQLhjHARixAxjRAxiABDIHCAQQLhiABDIGCAUQRRg8MgYIBhBFGDwyBggHEEUYPNIBCDEwMzdqMGo3qAIIsAIB&sourceid=chrome&ie=UTF-8#wptab=si:ACC90nyLlcElEvb2bNLvGYvz3qiAk36_xLowO0z1hH3MSVyQJZebVBKdHDG_hrwvDpeyNYE7n3IfQbBbFkGOGYOhxfcqwaQllNGsZTDY6iFH54DJHHJmiQ7S9ixi_4kJg5JYGUwaBJ70"><img src="midia/emAlta.jpg" alt=""></a>
+                <a href="https://www.google.com/search?q=a+gentleman+in+moscow+movie&sca_esv=855c61e28802c6ab&rlz=1C1FCXM_pt-PTBR1070BR1071&sxsrf=ADLYWIKkZ_AG_AeoWYhlG7KjEShZ57-XhA%3A1717310426994&ei=2hNcZo6uPOzL1sQPxfCT6AE&udm=&si=ACC90nyLlcElEvb2bNLvGYvz3qiASygFU18HFhCO6O1zVZpLaR6aiV_qaGwBNyOfQvrriRgVXgIIm7G6dMeZjc0hB0NusAXkxcC58hJfGBmQS-7wX47wVtDUnZcUjISz-oe31zUOeG52&ictx=1&ved=2ahUKEwjutrzyp7yGAxVpr5UCHc9NBo8Q_coHegQIWhAg"><img src="midia/emAlta1.jpeg" alt=""></a>
+                <a href="https://www.google.com/search?q=shogun&sca_esv=855c61e28802c6ab&rlz=1C1FCXM_pt-PTBR1070BR1071&sxsrf=ADLYWIK6DrAy5-K9mSzeQSpm0cKUvNAYog%3A1717310440223&ei=6BNcZpOiDcjb1sQP8LiDsAo&udm=&gs_ssp=eJzj4tVP1zc0TDMvMq1MycsxYPRiK87ITy_NAwBSogdP&oq=shogun&gs_lp=Egxnd3Mtd2l6LXNlcnAiBnNob2d1bioCCAAyDRAuGIAEGLEDGEMYigUyCxAuGIAEGLEDGNQCMggQABiABBixAzIFEAAYgAQyBRAAGIAEMggQABiABBixAzIIEAAYgAQYsQMyBRAuGIAEMgUQLhiABDIFEAAYgAQyHBAuGIAEGLEDGEMYigUYlwUY3AQY3gQY4ATYAQJIpElQuTBYvzxwAXgBkAEAmAGiAaABoQaqAQMwLja4AQHIAQD4AQGYAgigAucRqAIRwgIHECMYJxjqAsICFhAuGIAEGEMYtAIYyAMYigUY6gLYAQHCAgQQIxgnwgIKECMYgAQYJxiKBcICFBAuGIAEGLEDGNEDGIMBGMcBGIoFwgILEAAYgAQYsQMYgwHCAg4QLhiABBixAxiDARiKBcICCxAuGIAEGLEDGIMBwgIIEC4YgAQYsQPCAhEQLhiABBixAxjRAxiDARjHAcICEBAuGIAEGEMYxwEYigUYrwHCAgoQLhiABBhDGIoFwgIREC4YgAQYsQMYgwEYxwEYrwHCAgoQABiABBhDGIoFwgIIEAAYgAQYkgPCAgsQABiABBiSAxiKBcICCxAAGIAEGLEDGMkDmAMMugYGCAEQARgIugYGCAIQARgUkgcHMS42LjctMaAH-Gg&sclient=gws-wiz-serp"><img src="midia/emAlta2.jpeg" alt=""></a>
+                <a href="https://www.google.com/search?q=Bridgerton&rlz=1C1FCXM_pt-PTBR1070BR1071&oq=br&gs_lcrp=EgZjaHJvbWUqBggBEEUYOzIGCAAQRRg5MgYIARBFGDsyBggCEEUYPDIGCAMQRRg8MgYIBBBFGDwyBggFEEUYPTIGCAYQRRhBMgYIBxBFGEHSAQgyMDI2ajBqOagCALACAA&sourceid=chrome&ie=UTF-8"><img src="midia/emAlta3.jpg" alt=""></a>
+                <a href="https://www.google.com/search?q=may+december&sca_esv=855c61e28802c6ab&rlz=1C1FCXM_pt-PTBR1070BR1071&sxsrf=ADLYWIIoN55a-qNQ8mxUEC1Vr4j2jA-Dug:1717310536633&lr=lang_pt&sa=X&ved=2ahUKEwiY7oSkqLyGAxXpSLgEHWgNDA0QuAF6BAgIEAI&biw=1242&bih=575&dpr=1.1"><img src="midia/emAlta5.jpeg" alt=""></a>
+                <a href="#post" class="scroll-down">
+                    <span class="material-icons">expand_more</span>
+                </a>
+            </div>
+            <div class="post" id="post">
+                <div class="dados_usuario">
+                    <img src="midia/ftAna.jpeg" alt="">
+                    <p class="nome_usuario">@Aninhah</p>
+                </div>
+                <div class="conteudo_post">
+                    <div class="midia">
+                        <img src="midia/emAlta.jpg" alt="">
+                        <p>#Anatomia de uma Queda</p>
+                    </div>
+                    <div class="texto_post">
+                        <h3>Anatomia de uma Queda</h3>
+                        <p class="critica_post">
+                            Durante o último ano, Sandra, uma escritora alemã, e Samuel, 
+                            seu marido francês, viveram juntos com Daniel, o filho de 11 
+                            anos do casal, em uma pequena e isolada cidade nos Alpes. Quando Samuel 
+                            é encontrado morto, a polícia passa a tratar o caso como um suposto 
+                            homicídio, e Sandra se torna a principal suspeita.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="post" id="post">
+                <div class="dados_usuario">
+                    <img src="midia/ftAna.jpeg" alt="">
+                    <p class="nome_usuario">@Aninhah</p>
+                </div>
+                <div class="conteudo_post">
+                    <div class="midia">
+                        <img src="midia/emAlta1.jpeg" alt="">
+                        <p>#A Gentleman in Moscow</p>
+                    </div>
+                    <div class="texto_post">
+                        <h3>A Gentleman in Moscow</h3>
+                        <p class="critica_post">
+                            A Gentleman in Moscow é uma série limitada da 
+                            televisão britânica composta por 8 episódios, baseada 
+                            no romance de 2016 de Amor Towles. Ben Vanstone é escritor, 
+                            produtor executivo e showrunner. A série é estrelada por 
+                            Ewan McGregor no papel do Conde Alexander Rostov e estreou 
+                            na Paramount+ em 29 de março de 2024.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="post" id="post">
+                <div class="dados_usuario">
+                    <img src="midia/ftAna.jpeg" alt="">
+                    <p class="nome_usuario">@Aninhah</p>
+                </div>
+                <div class="conteudo_post">
+                    <div class="midia">
+                        <img src="midia/emAlta2.jpeg" alt="">
+                        <p>#Xógum: A Gloriosa Saga do Japão</p>
+                    </div>
+                    <div class="texto_post">
+                        <h3>Xógum: A Gloriosa Saga do Japão</h3>
+                        <p class="critica_post">
+                            Shōgun é uma série de televisão de drama histórico 
+                            baseada no romance homônimo de 1975, de James Clavell. 
+                            O romance foi previamente adaptado para uma minissérie 
+                            de televisão em 1980. A série estreou com seus dois primeiros 
+                            episódios em 27 de fevereiro de 2024, no Hulu e no FX.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="post" id="post">
+                <div class="dados_usuario">
+                    <img src="midia/ftAna.jpeg" alt="">
+                    <p class="nome_usuario">@Aninhah</p>
+                </div>
+                <div class="conteudo_post">
+                    <div class="midia">
+                        <img src="midia/emAlta.jpg" alt="">
+                        <p>#Bridgerton</p>
+                    </div>
+                    <div class="texto_post">
+                        <h3>Bridgerton</h3>
+                        <p class="critica_post">
+                            A trama gira em torno da respeitada e amorosa família 
+                            Bridgerton, composta pela viúva Lady Violet e seus oito filhos: 
+                            Anthony, Benedict, Colin, Daphne, Eloise, Francesca, Gregory e 
+                            Hyacinth. Assim como nos livros, cada temporada é focada em um 
+                            filho diferente, seus dramas pessoais e vida amorosa.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="post" id="post">
+                <div class="dados_usuario">
+                    <img src="midia/ftAna.jpeg" alt="">
+                    <p class="nome_usuario">@Aninhah</p>
+                </div>
+                <div class="conteudo_post">
+                    <div class="midia">
+                        <img src="midia/emAlta5.jpeg" alt="">
+                        <p>#Segredos de Um Escândalo</p>
+                    </div>
+                    <div class="texto_post">
+                        <h3>Segredos de Um Escândalo</h3>
+                        <p class="critica_post">
+                            Vinte anos após seu romance midiático virar assunto da nação, 
+                            um casal é colocado sob pressão quando uma atriz viaja até seu 
+                            lar para se preparar para um filme sobre o passado deles.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="rodape">
+        <div class="info">
+            <p>&copy; 2024 Life in Scenes. Todos os direitos reservados.</p>
+            <p>Feito com ❤️ por Ana Claudia Ferreira</p>
+        </div>
+        <div class="contatos">
+            <p>Contatos:</p>
+            <ul>
+                <li>Email: campaner@gmail.com</li>
+                <li>Telefone: (11) 97518-264555</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

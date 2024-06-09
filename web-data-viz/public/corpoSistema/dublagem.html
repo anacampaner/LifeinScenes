@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dublagem  - Life in Scenes</title>
+
+    <link rel="icon" href="../assets/icon/Icon.png" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+    <link rel="stylesheet" href="css/styleDublagem.css">
+    <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nova+Slim&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script src="../js/sessao.js"></script>
+</head>
+<body onload="validarSessao()">
+    <div class="header">
+        <ul class="itens">
+            <li><img src="midia/logo.png" alt="LOGO"></li>
+            <div class="dadosLogin">
+                <p class="nome_usuario">@<span id="b_usuario">usuário</span></p>
+                <img class="foto_perfil" src="midia/fotoPerFil.jpeg" alt="Foto de perfil">
+            </div>
+        </ul>
+    </div>
+    <div class="pagina">
+        <input type="checkbox" id="menu_toggle">
+        <label for="menu_toggle" id="simbolo_menu">
+            <span class="material-symbols-outlined">menu</span>
+        </label>
+        <div class="menu_lateral">
+            <ul class="topicos" id="menu_opcoes">
+                <li><a href="indexLogado.html"><span class="material-symbols-outlined">home</span><span class="texto">Inicio</span></a></li>
+                <li><a href="emAlta.html"><span class="material-symbols-outlined">trending_up</span><span class="texto">Em alta</span></a></li>
+                <li><a href="lancamento.html"><span class="material-symbols-outlined">star</span><span class="texto">Lançamentos</span></a></li>
+                <li><a href="dublagem.html"><span class="material-symbols-outlined">mic</span><span class="texto">Dublagens</span></a></li>
+                <li><a href="criadora.html"><span class="material-symbols-outlined">draw</span><span class="texto">Criadora</span></a></li>
+                <li><a href="quiz.html"><span class="material-symbols-outlined">format_list_bulleted</span>Quiz</span></a></li>
+                <br>
+                <li onclick="limparSessao()" class="sair"><span class="material-symbols-outlined">logout</span>Sair</li>
+            </ul>
+        </div>
+        <div class="conteudo">
+            <h1>DUBLAGEM BRASILEIRA</h1>
+            <div class="blocos">
+                <div class="bloco1">
+                    <h3>A dublagem brasileira é amplamente reconhecida como 
+                        uma das melhores do mundo, destacando-se pela qualidade 
+                        excepcional e pelo talento dos profissionais envolvidos. 
+                        Com uma habilidade impressionante em transmitir emoção e 
+                        sincronizar vozes com precisão, os dubladores brasileiros 
+                        conseguem criar uma experiência imersiva para os espectadores, 
+                        elevando o padrão da indústria e garantindo que as produções 
+                        estrangeiras sejam apreciadas por um público diversificado em todo o país.
+                    </h3>
+                </div>
+                <div class="bloco2">
+                    <h3>
+                        Além de sua excelência técnica, a dublagem brasileira 
+                        também tem o poder de criar memórias duradouras para muitos 
+                        espectadores, sendo um portal crucial para a inserção de pessoas na arte. 
+                        Especialmente durante a infância, quando muitos ainda não são alfabetizados
+                         ou estão apenas começando a dominar a língua portuguesa, a dublagem oferece 
+                         acesso imediato a narrativas e personagens de todo o mundo, enriquecendo suas 
+                         vidas e ampliando seus horizontes culturais desde tenra idade. Qual voz marcou 
+                         sua infância?
+                    </h3>
+                </div>
+            </div>
+            <h1>DUBLADORES QUE MARCARAM INFÂNCIAS</h1>
+            <div class="dubladores">
+                <a href="https://www.google.com/search?q=ana+lucia+menezes+&sca_esv=338d91811af8f24c&rlz=1C1FCXM_pt-PTBR1070BR1071&sxsrf=ADLYWIJKVpcfPF1bmOYEs-sUsAglIBgioA%3A1717363193032&ei=-eFcZsDFAdrT1sQP6_216Ao&udm=&ved=0ahUKEwiApsi47L2GAxXaqZUCHet-Da0Q4dUDCBA&uact=5&oq=ana+lucia+menezes+&gs_lp=Egxnd3Mtd2l6LXNlcnAiEmFuYSBsdWNpYSBtZW5lemVzIDIEECMYJzIFEC4YgAQyBRAAGIAEMgUQABiABDIFEC4YgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABEirBlBKWMQDcAF4AJABAJgBzwGgAZ0FqgEFMC4zLjG4AQPIAQD4AQGYAgOgAtECwgILEAAYgAQYsAMYogTCAggQABiABBiiBJgDAIgGAZAGBZIHAzEuMqAHrRY&sclient=gws-wiz-serp"><img src="midia/analuciaMenezes.jpeg" alt="Ana Lucia Menezes"></a>
+                <a href="https://www.google.com/search?q=garcia+junior&sca_esv=338d91811af8f24c&rlz=1C1FCXM_pt-PTBR1070BR1071&sxsrf=ADLYWIKLqVavfA1ehJgBrs4yg9MW_6Exsg%3A1717363227231&ei=G-JcZtzfDZeq1sQP9IGhwAM&udm=&gs_ssp=eJzj4tLP1TcwLkwpqMgxYPTiTU8sSs5MVMgqzcvMLwIAdqwJEg&oq=gar&gs_lp=Egxnd3Mtd2l6LXNlcnAiA2dhcioCCAAyChAuGIAEGEMYigUyChAuGIAEGEMYigUyCxAuGIAEGLEDGIMBMgUQABiABDILEAAYgAQYsQMYgwEyDhAuGIAEGLEDGIMBGIoFMggQABiABBixAzILEAAYgAQYsQMYgwEyCxAuGIAEGLEDGNQCMgsQLhiABBixAxiDATIZEC4YgAQYQxiKBRiXBRjcBBjeBBjgBNgBAkjYE1AwWNkLcAJ4AZABBJgBiwOgAfkOqgEHMC41LjIuMrgBA8gBAPgBAZgCBqACywSoAhTCAgoQABiwAxjWBBhHwgIKEAAYgAQYQxiKBcICCxAuGIAEGMcBGK8BwgIGEAAYFhgewgIHECMYJxjqAsICBxAuGCcY6gLCAhYQABgDGLQCGOUCGOoCGIwDGI8B2AEBwgIKECMYgAQYJxiKBcICBBAjGCfCAhEQLhiABBixAxjRAxiDARjHAcICCBAuGIAEGLEDmAMLiAYBkAYIugYGCAEQARgLugYGCAIQARgUkgcDMi40oAfw3AE&sclient=gws-wiz-serp"><img src="midia/garciaJunior.jpeg" alt="Garcia Junior"></a>
+                <a href="https://www.google.com/search?q=cecilia+lemes&rlz=1C1FCXM_pt-PTBR1070BR1071&oq=ceci&gs_lcrp=EgZjaHJvbWUqCAgAEEUYJxg7MggIABBFGCcYOzIGCAEQRRg5MgcIAhAuGIAEMgcIAxAuGIAEMgcIBBAAGIAEMgcIBRAuGIAEMgcIBhAAGIAEMgcIBxAAGIAEMgcICBAuGIAEMg0ICRAuGK8BGMcBGIAE0gEIMzM2MGowajmoAgiwAgE&sourceid=chrome&ie=UTF-8"><img src="midia/ceciliaLemes.jpeg" alt=""></a>
+                <a href="https://www.google.com/search?q=marcio+simoes&rlz=1C1FCXM_pt-PTBR1070BR1071&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MgoIARAAGLEDGIAEMgoIAhAuGLEDGIAEMg0IAxAuGIMBGLEDGIAEMgcIBBAuGIAEMhAIBRAuGIMBGLEDGIAEGIoFMg0IBhAuGNQCGLEDGIAEMgcIBxAuGIAEMgcICBAuGIAEMhAICRAuGK8BGMcBGLEDGIAE0gEIODE4MWowajmoAgCwAgA&sourceid=chrome&ie=UTF-8&si=ACC90nxUzOfvFoU4exd4biKnHm2FGZZjR8z6hR8yyeu1_0igj-RUiqWVcy8R_-QAyUCVxvFJNwWkupxMjk4ywmK-ufTwBfNGfMHZVRZaTXRxe68-beOa98w%3D&ictx=1&ved=2ahUKEwi01d_l7L2GAxUyrpUCHWd8DowQ9YYDegQISxAC"><img src="midia/marcioSimoes.jpeg" alt="Marcio Simões"></a>
+                <a href="https://www.google.com/search?q=flora+paulita+dubladora&rlz=1C1FCXM_pt-PTBR1070BR1071&oq=flora+pauli&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MgYIARBFGDsyBwgCEC4YgAQyBggDEEUYOTIHCAQQABiABDIHCAUQLhiABDIHCAYQABiABDIHCAcQABiABDIHCAgQABiABNIBCDIzNDRqMGo5qAIAsAIA&sourceid=chrome&ie=UTF-8"><img src="midia/floraPaulina.jpeg" alt="Flora Paulina"></a>
+                <a href="https://www.google.com/search?q=Marcelo+Gastaldi&sca_esv=338d91811af8f24c&rlz=1C1FCXM_pt-PTBR1070BR1071&sxsrf=ADLYWIIW9xNgFnqxEHnvj1e2FDx9YkQ_jw%3A1717363358648&ei=nuJcZo6PJ9DZ1sQPxfGjmAQ&udm=&ved=0ahUKEwiO1sSH7b2GAxXQrJUCHcX4CEMQ4dUDCBA&uact=5&oq=Marcelo+Gastaldi&gs_lp=Egxnd3Mtd2l6LXNlcnAiEE1hcmNlbG8gR2FzdGFsZGkyBRAuGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMhQQLhiABBiXBRjcBBjeBBjgBNgBAUjXDFAQWIILcAJ4AZABApgBqwOgAdwPqgEJMC4xLjIuMi4yuAEDyAEA-AEBmAIDoAKXAcICChAAGLADGNYEGEeYAwCIBgGQBgi6BgYIARABGBSSBwMyLjGgB7oo&sclient=gws-wiz-serp"><img src="midia/marceloGastaldi.jpeg" alt="Marcelo Gastaldi"></a>
+                <a href="https://www.google.com/search?q=mario+monjardim&rlz=1C1FCXM_pt-PTBR1070BR1071&oq=mario+&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MgYIARBFGDkyCggCEAAYsQMYgAQyCggDEC4YsQMYgAQyDQgEEC4YgwEYsQMYgAQyCggFEC4YsQMYgAQyDQgGEC4YgwEYsQMYgAQyDQgHEC4YgwEYsQMYgAQyCggIEC4YsQMYgAQyCggJEC4YsQMYgATSAQgxMjE4ajBqOagCALACAQ&sourceid=chrome&ie=UTF-8"><img src="midia/marioMonjardijm.jpg" alt="Mario Monjardim"></a>
+                <a href="https://www.google.com/search?q=sheila+dorfman&rlz=1C1FCXM_pt-PTBR1070BR1071&oq=sheila+&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MgcIARAuGIAEMgcIAhAuGIAEMgYIAxBFGDkyBwgEEC4YgAQyBwgFEC4YgAQyDAgGEC4YChixAxiABDIHCAcQABiABDINCAgQLhivARjHARiABNIBCDI4ODJqMGo5qAIAsAIA&sourceid=chrome&ie=UTF-8"><img src="midia/sheilaDorfman.jpeg" alt="Sheila Dorfman"></a>
+                <a href="https://www.google.com/search?q=marcio+ribeiro+dublador&sca_esv=338d91811af8f24c&rlz=1C1FCXM_pt-PTBR1070BR1071&sxsrf=ADLYWILQKIPhh7XP7_Tyb3lTRFW5yFPqzQ%3A1717363429663&ei=5eJcZoWKKOPb1sQPwcOq6A0&udm=&gs_ssp=eJzj4tZP1zc0MjSpKCgoMGD0Es9NLErOzFcoykxKzSzKV0gpTcpJTMkvAgDn4Qzx&oq=marcio+ribeiro+dubl&gs_lp=Egxnd3Mtd2l6LXNlcnAiE21hcmNpbyByaWJlaXJvIGR1YmwqAggAMgUQLhiABDIIEAAYgAQYogQyCBAAGIAEGKIEMggQABiABBiiBDIIEAAYgAQYogQyFBAuGIAEGJcFGNwEGN4EGOAE2AEBSLsPUABYnAlwAHgBkAEAmAGKA6AB2gqqAQcwLjQuMC4yuAEDyAEA-AEBmAIHoAKXEcICBRAAGIAEwgILEC4YgAQYxwEYrwHCAg4QLhiABBjHARiOBRivAcICBhAAGBYYHsICCBAAGBYYHhgPwgIIEAAYogQYiQWYAwC6BgYIARABGBSSBwswLjQuMC4yLjAuMaAH8jw&sclient=gws-wiz-serp"><img src="midia/marcoRibeiro.jpeg" alt="Marco Ribeiro"></a>
+                <a href="https://www.google.com/search?q=orlando+drummond&rlz=1C1FCXM_pt-PTBR1070BR1071&oq=orl&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MgYIARBFGDkyBggCEEUYO9IBCDI4NzlqMGo5qAIAsAIA&sourceid=chrome&ie=UTF-8"><img src="midia/orlandoDrummond.jpeg" alt=""></a>
+            </div>
+        </div>
+    </div>
+    <div class="rodape">
+        <div class="info">
+            <p>&copy; 2024 Life in Scenes. Todos os direitos reservados.</p>
+            <p>Feito com ❤️ por Ana Claudia Ferreira</p>
+        </div>
+        <div class="contatos">
+            <p>Contatos:</p>
+            <ul>
+                <li>Email: campaner@gmail.com</li>
+                <li>Telefone: (11) 97518-264555</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

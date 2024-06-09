@@ -1,0 +1,564 @@
+/*Zerando os espaçamentos do body*/
+body
+{
+    margin: 0;
+    padding: 0;
+    font-family:"Edu VIC WA NT Beginner", cursive;
+    overflow-x: hidden;
+    background: linear-gradient(to left, #000000 45%, #000033 100%);
+}
+
+
+/*Header padrão das páginas iniciais*/
+.header 
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1; 
+    background-color: transparent; 
+    width: 100%;
+    height: 12vh;
+}
+
+
+/*Configurando as dimensôes da imagem presente no header*/
+.itens
+{
+    padding: 0vh 5vw;
+    margin: 0;
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    color: #FFF;
+}
+
+.itens img
+{
+    width: auto;
+    height:auto;
+    max-height: 20vh;
+    max-width: 20vw;
+    margin-top: 1%;
+}
+
+.dadosLogin p
+{
+    font-size: 3.5vh;
+}
+
+.foto_perfil
+{
+    width: 40% !important; 
+    height: 5% !important; 
+    border-radius: 50% !important; 
+}
+
+.dadosLogin
+{
+    display: flex;
+    align-items: center;
+    margin-left:  82% !important;
+}
+
+
+/*Corpo do site*/
+.pagina
+{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    transition: justify-content 0.3s ease;
+}
+
+/*Configurações do menu lateral da página*/
+.menu_lateral
+{
+    position: fixed;
+    height: calc(100vh - 13vh);
+    width: 12vw;
+    display: flex;
+    flex-direction: column;
+    margin-top: 12vh;
+    left: -12vw; 
+    transition: left 0.3s ease;
+}
+
+/*Escondendo o simbolo do checkbox do menu*/
+#menu_toggle 
+{
+    display: none;
+}
+
+/*Definindo espaçamento e estilo da lista de tópicos do menu lateral*/
+/*Estilizando os links do menu*/
+.topicos a, .sair
+{
+    display: flex;
+    align-items: center;
+    font-size: 1.5vw;
+    margin: 1vh;
+    margin-top: 10%;
+    text-decoration: none;
+    color: #FFF;
+}
+
+/*Quando o mouse passar pelos tópicos ele muda de cor*/
+.topicos a:hover,.sair:hover
+{
+    color: #0074D9;
+    cursor: pointer;
+}
+
+/*Quando o mouse passar pelos tópicos ele muda de cor*/
+.topicos a:hover
+{
+    color: #0074D9;
+}
+
+/* Configurações dos itens apresentados no corpo do site*/
+.conteudo
+{
+    margin-top: 15vh;
+    width: calc(100vw - 12vw);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: width 0.3s ease;
+}
+
+.material-symbols-outlined 
+{
+    color: #FFFFFF; /* Cor branca */
+}
+
+/*Quando clicar no simbolo de menu e fechar o manu lateral o conteudo se adequa na tela toda*/
+#menu_toggle:not(:checked) ~ .conteudo 
+{
+    width: 100%;
+}
+    
+/*Quando clicar no simbolo de menu e fechar o manu lateral a página centraliza os itens*/
+#menu_toggle:not(:checked) ~ .pagina 
+{
+    justify-content: center;
+}
+
+/*Configurações da área do post*/
+.post
+{
+    background-color:#FFF;
+    display: flex;
+    flex-direction: column;
+    max-width: 62%;
+    padding: 1%;
+    border-radius: 2%;
+    margin-bottom: 2%;
+    max-height: 35%;
+}
+
+/*Configura os dados do usuário que fez a publicação*/
+.dados_usuario
+{
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    padding: 1%;
+    max-height: 5%;
+    color: #000033;
+}
+
+/*Configurações da imagem do usuário*/
+.dados_usuario img
+{
+    width: 6%;
+    height: auto;
+    border-radius: 50%;
+}
+
+/*Configurações do conteúdo do post*/
+.conteudo_post
+{
+    display: flex;
+    justify-content: center;
+}
+
+/*Titulo do conteúdo do post*/
+.conteudo_post h3
+{
+    margin: 0;
+    padding: 0;
+}
+
+/*Área que apresenta a produção escolhida*/
+.midia 
+{
+    width: 45%;
+    margin-right: 2%;
+}
+
+/*Imagem da produção*/
+.midia img
+{
+    width: 100%;
+    height: 88%;
+}
+
+/*Nome da produção*/
+.midia p
+{
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+/*Área de texto do post*/
+.texto_post
+{
+    width: 55%;
+}
+
+.texto_post h2
+{
+   color: #000033;
+}
+
+/*Crítica do post*/
+.critica_post 
+{
+    max-height: 65%;
+    overflow-y: auto;
+}
+
+.top_semana
+{
+color: #FFF;
+width: 65%;
+height: 40%;
+margin-bottom: 14%;
+}
+
+.top_semana img
+{
+margin-left: 3%;
+width: 16%;
+height: 85%;
+}
+
+.material-icons 
+{
+    font-size: 36px;
+}
+
+.scroll-down 
+{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 0;
+    color: #FFF;
+    transition: transform 0.3s ease;
+}
+
+.scroll-down:hover
+{
+    transform: scale(1.3) translateX(-40%);
+}
+
+.scroll-down .material-icons 
+{
+    font-size: 36px;
+    color: white;
+}
+
+.rodape 
+{
+    background: #000033; 
+    color: #FFF;
+    text-align: center; 
+    padding: 2% 0; 
+    width: 100%; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-top: 5%;
+}
+
+.rodape .info, .rodape .contatos
+{
+    flex: 1; 
+}
+
+.rodape a 
+{
+    color: #FFF; 
+    text-decoration: none; 
+    font-weight: bold; 
+}
+
+.rodape a:hover 
+{
+    text-decoration: underline; 
+}
+
+.rodape ul 
+{
+    list-style-type: none; 
+    padding: 0; 
+}
+
+.rodape li 
+{
+    margin-bottom: 2%; 
+}
+
+
+/* Responsividade - Para estudo*/
+
+/* Estilo para telas acima de 984px */
+@media only screen and (min-width: 984px) 
+{
+    #simbolo_menu {
+        position: fixed;
+        top: 12vh;
+        left: 0;
+        z-index: 1;
+        transition: left 0.3s ease;
+    }
+
+    #menu_toggle:checked + #simbolo_menu + .menu_lateral 
+    {
+        left: 0;
+    }
+
+    #menu_toggle:checked + #simbolo_menu 
+    {
+        left: 10vw;
+    }
+}
+
+/* Estilo para telas abaixo de 984px */
+@media only screen and (max-width: 984px) 
+{
+    #simbolo_menu {
+        position: fixed;
+        top: 10vh;
+        left: 0;
+        z-index: 1;
+        transition: left 0.3s ease;
+    }
+
+    .topicos .material-symbols-outlined
+    {
+        font-size: 3.5vh;
+    }
+
+    .topicos .texto {
+        display: none; /* Oculta o texto dos tópicos */
+    }
+
+    .menu_lateral {
+        width: 8vw; /* Diminui a largura do menu lateral */
+    }
+
+    #menu_toggle:checked + #simbolo_menu {
+        left: 5vw;
+    }
+
+    #menu_toggle:checked + #simbolo_menu + .menu_lateral {
+        left: 0;
+    }
+
+    .header
+    {
+        height: 10vh;
+    }
+
+    .menu_lateral
+    {
+        margin-top: 10vh;
+        height: calc(100vh - 11vh);
+    }
+
+    .midia
+    {
+        width: 50%;
+        height: 50%;
+    }
+}
+
+/* Estilo para telas abaixo de 450px */
+@media only screen and (max-width: 450px) 
+{
+    #simbolo_menu {
+        position: fixed;
+        top: 8vh;
+        left: 0;
+        z-index: 1;
+        transition: left 0.3s ease;
+    }
+
+    .topicos .texto {
+        display: none; /* Oculta o texto dos tópicos */
+    }
+
+    .menu_lateral {
+        width: 10vw; /* Diminui a largura do menu lateral */
+    }
+
+    #menu_toggle:checked + #simbolo_menu {
+        left: 7vw;
+    }
+
+    #menu_toggle:checked + #simbolo_menu + .menu_lateral 
+    {
+        left: 0;
+    }
+
+    .topicos .material-symbols-outlined
+    {
+        font-size: 2.5vh;
+    }
+
+    .header
+    {
+        height: 8vh;
+    }
+
+    .menu_lateral
+    {
+        margin-top: 8vh;
+        height: calc(100vh - 9vh);
+    }
+}
+
+
+/* Estilo para telas abaixo de 250px */
+@media only screen and (max-width: 250px) 
+{
+    #simbolo_menu 
+    {
+        position: fixed;
+        top: 5vh;
+        left: 0;
+        z-index: 1;
+        transition: left 0.3s ease;
+    }
+
+    .topicos .texto 
+    {
+        display: none; /* Oculta o texto dos tópicos */
+    }
+
+    .menu_lateral 
+    {
+        width: 8vw; /* Diminui a largura do menu lateral */
+    }
+
+    #menu_toggle:checked + #simbolo_menu 
+    {
+        left: 10vw;
+    }
+
+    #menu_toggle:checked + #simbolo_menu + .menu_lateral 
+    {
+        left: 0;
+    }
+
+    .topicos .material-symbols-outlined
+    {
+        font-size: 1vh;
+    }
+
+    .material-symbols-outlined
+    {
+        font-size: 1.5vh;
+    }
+    
+    .header
+    {
+        height: 5vh;
+        width: 100vw;
+    }
+
+    .menu_lateral
+    {
+        margin-top: 5vh;
+        height: calc(100vh - 6vh);
+    }
+
+}
+
+/* Estilo para telas acima de 1250px */
+@media only screen and (max-width: 1250px) 
+{
+    .midia {
+        width: 100%;
+        height: 85%; /* Ajusta a altura automaticamente */
+    }
+
+    .texto_post
+    {
+        width: 100%;
+    }
+
+    .post {
+        width: 100%; /* Ajusta a largura do post */
+        max-width: 100%; /* Garante que o post não ultrapasse a largura do conteúdo */
+    }
+}
+
+/* Estilo para telas abaixo de 690px */
+@media only screen and (max-width: 690px) 
+{
+    .midia img 
+    {
+        display: none;
+    }
+
+    .conteudo_post
+    {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .texto_post
+    {
+        width: 100% !important;
+    }
+
+    .midia
+    {
+        width: 100% !important;
+    }
+
+    .critica_post 
+    {
+        max-height: 40%;
+        overflow-y: auto;
+    }
+}
+
+/* Estilo para telas abaixo de 800px */
+@media only screen and (max-width: 800px) 
+{
+    .midia {
+        width: 100%;
+        height: auto; /* Ajusta a altura automaticamente */
+    }
+
+    .conteudo_post {
+        width: 100%;
+    }
+
+    .post {
+        width: 100%; /* Ajusta a largura do post */
+        max-width: 100%; /* Garante que o post não ultrapasse a largura do conteúdo */
+    }
+}
