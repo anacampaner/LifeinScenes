@@ -1,0 +1,28 @@
+Script Banco de dados
+
+create database if not exists lifeInScenes;
+
+use lifeInScenes;
+
+create table usuario
+(	
+	idUsuario int primary key auto_increment,
+	nome varchar(60) not null,
+    dataNascimento date not null,
+    nickname varchar(60) not null unique,
+    senha varchar(60) not null,
+    email varchar(60) not null unique,
+    cpf char(11) not null unique
+);
+
+create table quiz
+(
+	id int primary key auto_increment,
+	qtdAssistidoMes int not null,
+    influenciaFilme varchar(45) not null,
+    producoesFavoritas varchar(400) not null,
+    generoFavorito varchar(45) not null,
+    tipoProducaoFavorita varchar(45) not null,
+    fkusuario int,
+    foreign key(fkusuario) references usuario(idUsuario)
+);
